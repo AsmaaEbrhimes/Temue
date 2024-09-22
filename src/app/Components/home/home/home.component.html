@@ -1,0 +1,128 @@
+<app-header></app-header>
+
+
+
+<div clss="main_page">
+    <img class="w-100 bg-warning" src="assets/imges/b3ce0e1c-6b21-4243-9e57-637e6838a540.webp" alt="" />
+    <div class="temus_comments_main mt-3">
+        <div class="Container">
+            <div class="temus_comments" (click)="showDialog()">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                    <h4>Temu's Commitments</h4>
+                    <ul class=" d-flex flex-wrap">
+                        <li><i class="fa-solid fa-lock"></i> Secure</li>
+                        <li><i class="fa-regular fa-credit-card"></i> Save Payments</li>
+                        <li><i class="fa-solid fa-truck"></i> Delivery guarantee</li>
+                    </ul>
+                </div>
+                <div class="temus_comments_two d-flex justify-content-between align-items-center">
+                    <h4> <i style="color: green" class="fa-solid fa-bell"></i> Be wary of about delivery issues claming
+                        to be from Evri <i class="fa-solid fa-angle-right"></i></h4>
+                    <h4>View</h4>
+                </div>
+
+
+
+
+                <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
+                    [breakpoints]="{ '1199px': '100vw', '575px': '90vw' }" [maximizable]="true">
+                    <img style="width:150px ; margin:auto ; text-align:center ; display:block"
+                        src="assets/imges/a7686991-ab20-4b49-a016-82ca928f32c1.png.slim.webp" />
+
+                    <div class="m-auto text-center p-3">
+                        <h3>Security reminder</h3>
+                        <p class="w-100">Do not click on any links or pay any fees if you receive a message claiming to
+                            be from Evri about delivery issues due to an incorrect address. You should check the status
+                            of your package on Temu's order page or contact the courier directly.</p>
+                    </div>
+                    <button (click)="visible = false" class="btn_dilog">Ok</button>
+                    <div>
+                        <p
+                            style="margin:auto ; text-align:center ; width: 50%; padding-bottom: 20px; padding-top: 20px;">
+                            If you come across anything suspicious, please report it in time</p>
+
+                    </div>
+
+                </p-dialog>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main_product">
+    <div class="Container">
+        <div class=" mt-5 main_product_flex">
+            <div class="row" *ngIf="dataHome">
+                <div *ngFor="let item of dataHome" class="cards col-sm-12 col-md-3 col-lg-2">
+                    <ng-container *ngIf="item.video; else showImage">
+                        <video controls style="height:60%; width:100%; border-radius: 10px;"
+                           [routerLink]="['detailsproducr', item.id]"
+                            src="assets/videos/{{item.video}}" muted autoplay></video>
+                    </ng-container>
+
+                    <ng-template #showImage>
+                        <img src="assets/imges/{{item.img1}}" alt="Image"[routerLink]="['detailsproducr', item.id]"/>
+                    </ng-template>
+                    <div class="d-flex justify-content-around align-items-center mt-4">
+                        <p style="color:orange; font-size:25px">{{item.salary}}</p>
+                        <p class="discount">45%</p>
+                        <i class="fa-solid fa-bag-shopping" (click)="showDialog2(item.id)"
+                            style="font-size:30px; cursor:pointer; color:orange; top:-10px; position: relative;"></i> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card flex justify-content-center">
+        <p-dialog [(visible)]="visible2" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+            [style]="{ width: '60vw' }" [draggable]="false" [resizable]="false">
+            <div class="content_dilog">
+                <div class="card">
+                    <img  class="main_img_dilog"[src]="EleData.img1 ? 'assets/imges/' + EleData.img1 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'" alt="" />     
+                    <div class=" p-2 img_dilog_home">
+                        <img class="ele_img_dilog"  [src]="EleData.img1 ? 'assets/imges/' + EleData.img1 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'" alt="" />     
+                        <img class="ele_img_dilog"  [src]="EleData.img2 ? 'assets/imges/' + EleData.img2 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'" alt="" />     
+                        <img class="ele_img_dilog"  [src]="EleData.img3 ? 'assets/imges/' + EleData.img3 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'" alt="" />     
+
+                    </div>        
+                   </div>
+
+
+                <div style="margin-left: 10px;">
+                    <p class="desc_dilog">{{EleData.title}}</p>
+                    <p
+                        style="background-color:green ; color:white ; width:fit-content ; padding:10px ; border-radius:10px">
+                        67 sold Provided by (3.2K+ sold)</p>
+                    <p style="color:red ; font-size:20px">£4.87</p>
+
+                    <div class="border_photo_galari">
+                        <p style="background-color: orange; padding:10px ; color:white ; border-radius:10px">Lightning
+                            deal <img style="width:100px" src="assets/imges/404e20b4-4841-4551-8d7c-073b3ce2354a.png.slim.webp" /></p>
+                        <p style="font-size:20px ; font-weight:bold">Colors</p>
+
+                        <div class="d-flex">
+
+                            <img [src]="EleData.img1 ? 'assets/imges/' + EleData.img1 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
+                               class="" style="width:130px ; margin-left: 5px;" alt="" />
+                            <img [src]="EleData.img2 ? 'assets/imges/' + EleData.img2 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
+                            class=""  style="width:130px ; margin-left: 5px;" alt="" />
+                            <img [src]="EleData.img3 ? 'assets/imges/' + EleData.img3 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
+                            class=""   style="width:130px ; margin-left: 5px;" alt="" />
+                        </div>
+                        <button class="btn_card">Add To Card</button>
+                    </div>
+                </div>
+
+            </div>
+        </p-dialog>
+    </div>
+</div>
+
+
+
+
+
+<app-footer></app-footer>

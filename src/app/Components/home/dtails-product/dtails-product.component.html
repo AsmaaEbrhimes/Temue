@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div class="detailas_product">
+    <div class="Container">
+        <div class="content_details_product">
+
+
+            <div class="d-flex img_product_details">
+                <div class="img_scroll">
+                    <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img1" class="img_details"
+                        [src]="'assets/imges/' + objectDta.img1" alt="" />
+                    <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img2" class="img_details"
+                        [src]="'assets/imges/' + objectDta.img2" alt="" />
+                    <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img3" class="img_details"
+                        [src]="'assets/imges/' + objectDta.img3" alt="" />
+                    <video (mouseover)="sliderVideo($event)" class="video_details" *ngIf="objectDta?.video" controls
+                        style="height:60%; width:100%; border-radius: 10px;" [src]="'assets/videos/' + objectDta.video"
+                        muted autoplay></video>
+
+
+                </div>
+                <div class="container_img_details">
+                    <img *ngIf="objectDta?.img1 && showImg" class="img_details" [src]="main_img" alt="" />
+                    <video (mouseover)="sliderVideo($event)" class="" *ngIf="objectDta?.video && showVideo"
+                        controls class="video_details_main" [src]="main_video" muted
+                        autoplay></video>
+                </div>
+            </div>
+
+
+
+            <div class="m-5 desc_product_details">
+                <p>{{objectDta.title}}</p>
+                <p class="mt-4 mb-4 span_salary">£{{objectDta.salary}} <span style="color:#fb7701">Pay £1.49
+                        today</span> <span class="sale_product_details">-55%</span><span
+                        style="color:#ccc">RRP£9.99</span></p>
+
+                <p>{{ 'Installment.installment' | translate }}<span class="klarn">Klarna</span></p>
+                <div class="d-flex justify-content-between decsc_icon mt-5 mb-5">
+                    <p><i class="fa-solid fa-check"></i>{{ 'Installment.delvire' | translate }}</p>
+                    <p>Exclusive offer</p>
+                </div>
+
+                <div class="color_product">
+                    <div style="background-color:#fb7701;color: white;padding: 10px">
+                        <span>Lightning deal</span>
+                        <img style="width:100px ; margin-left: 10px;  margin-right: 10px;"
+                            src="assets/imges/404e20b4-4841-4551-8d7c-073b3ce2354a.png.slim.webp" />
+                        <span>-66% last day</span>
+                    </div>
+                    <div class="p-3">
+                        <p>Color: 1pcs Floral Hair Clip; Black</p>
+                        <span>{{ 'Installment.Qty' | translate }} </span>
+                        <select class="select_size">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <span style="color:#fb7701;padding: 10px;">
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <span style="margin-left:10px">{{ 'Installment.almost' | translate }}</span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="icon_start mt-5 mb-5">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+
+                <button class="btn_product_details"><i class="fa-brands fa-google-wallet"
+                        style="color: yellow;margin-right:10px;font-size:30px"></i>{{ 'Installment.Add' | translate
+                    }}</button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

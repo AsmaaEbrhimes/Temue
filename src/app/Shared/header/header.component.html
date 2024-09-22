@@ -1,0 +1,135 @@
+<div class="header">
+
+    <div class="container_header">
+        <div class="content_header_one bg-black">
+            <div class="container">
+                <ul class="d-flex align-items-center justify-content-between flex-wrap list_header_one">
+                    <li class="d-flex align-items-center" style="color:#FFF7A7;">
+                        <div>
+                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
+                        </div>
+                        <div>
+                            <div class="anmit_1">
+                                <p>Free Shipping</p>
+                                <p>Special for you</p>
+                            </div>
+                            <div class="anmit_2">
+                                <p>Free Shipping</p>
+                                <p>Special for you</p>
+                            </div>
+
+                            <div class="anmit_3">
+                                <p>Free Shipping</p>
+                                <p>Special for you</p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li class="d-flex align-items-center active" style="color:#FFF7A7;">
+                        <div>
+                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
+                        </div>
+                        <div>
+                            <p>Free Shipping</p>
+                            <p>Special for you</p>
+                        </div>
+
+                    </li>
+
+                    <li class="d-flex align-items-center" style="color:#FFF7A7;">
+                        <div>
+                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
+                        </div>
+                        <div>
+                            <p>Free Shipping</p>
+                            <p>Special for you</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="content_header_two">
+            <div class="container">
+
+
+                <div class="contnt_flex_header">
+                    <div class="d-flex align-items-center list_one">
+                        <div class="d-flex align-items-center p-3 text-white">
+                            <div class=" d-flex align-items-center">
+                                <i class="fa-solid fa-icons"></i>
+                                <p>Best Sellers</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center p-3 text-white">
+                            <i class="fa-regular fa-star"></i>
+                            <p>5-Star Rated</p>
+                        </div>
+
+                        <div class="d-flex align-items-center p-3 text-white position-relative">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <div class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
+                                <p>Categores</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action_header">
+                        <i class="fa-solid fa-bars bars"></i>
+                        <input type="text" />
+                        <i class="fa-solid fa-magnifying-glass glass" (click)="showDialog('top')"></i>
+                    </div>
+
+                    <div>
+                        <ul class="d-flex justify-content-center align-items-center text-white">
+                            <li>SignIn/Register<i class="fa-solid fa-user"></i></li>
+                            <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' : "en"}}<i class="fa-solid fa-globe" style="margin-left:10px; font-size:20px"></i></button></li>
+                            <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping" (click)="sidebarVisible2 = true"></i>
+                            </li>
+
+                            <div class="card flex flex-wrap justify-content-center gap-2">
+
+                                <p-sidebar [(visible)]="sidebarVisible2" position="right">
+                                    <h3>Right Sidebar</h3>
+                                </p-sidebar>
+
+                            </div>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [position]="position" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-5">
+        Update your information.
+    </span>
+    <div class="flex align-items-center gap-3 mb-3">
+        <label for="username" class="font-semibold w-6rem">
+            Username
+        </label>
+        <input pInputText id="username" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="flex align-items-center gap-3 mb-5">
+        <label for="email" class="font-semibold w-6rem">
+            Email
+        </label>
+        <input pInputText id="email" class="flex-auto" autocomplete="off" />
+    </div>
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
+        <p-button label="Save" (onClick)="visible = false" />
+    </div>
+</p-dialog>

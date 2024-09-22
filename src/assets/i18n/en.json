@@ -1,0 +1,20 @@
+{
+    "register": {
+        "CreateAccount": "Register"
+    },
+    "Login": {
+        "login": "Login"
+    },
+    "Installment": {
+        "installment": "3 interest-free monthly installments with",
+        "delvire": "Free shipping special for you",
+        "almost":"Almost sold out",
+        "Qty":"Qty",
+        "Add" :"Add To Cart"
+
+
+
+
+
+    }
+}

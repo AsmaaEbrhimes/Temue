@@ -1,0 +1,235 @@
+.temus_comments {
+    border: 1px solid green;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.temus_comments ul li {
+    padding: 10px;
+    position: relative;
+}
+
+
+.temus_comments ul li:not(:first-child)::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 95%;
+    border-left: 1px solid white;
+    margin-top: 0px;
+    position: absolute;
+    left: 0;
+}
+
+.temus_comments div:first-child {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: 0.3s linear;
+}
+
+.temus_comments div:first-child:hover {
+    opacity: 0.8;
+}
+
+.temus_comments div:first-child h4 {
+    padding: 10px;
+}
+
+.temus_comments_two {
+    color: green;
+    padding: 20px;
+
+    transition: 0.3s linear;
+}
+
+
+.temus_comments_two:hover {
+    background-color: #eee;
+
+}
+
+.btn_dilog {
+    margin: auto;
+    text-align: center;
+    display: block;
+    background-color: #fb7701;
+    border: none !important;
+    outline: none;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    transition: 0.3s linear;
+}
+
+.btn_dilog:hover {
+    transform: scale(1.1);
+}
+
+
+.main_product img {
+    border-radius: 10px;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.main_product_flex .cards {
+    cursor: pointer;
+    overflow: hidden;
+   
+    transition: 0.10s linear !important;
+}
+
+.main_product_flex .cards img{
+    transition: 0.10s linear !important;
+
+}
+.main_product_flex .cards:hover img {
+    transform: scale(1.1);
+}
+
+.main_product_flex .discount {
+    border: 1px solid orange;
+    padding: 5px;
+    color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.img_dilog_home{
+    display: flex;
+
+}
+
+.ele_img_dilog{
+    width: 100px; height:100px
+}
+
+
+.img_dilog_option{
+    width:130px ; 
+
+    margin-left: 5px;
+    display: none;
+}
+::ng-deep .p-dialog-content {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+    border-bottom: 0 none;
+    background:transparent;
+    color:transparent;
+    padding: 1.5rem;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+
+::ng-deep .p-galleria .p-galleria-thumbnail-container {
+    background: white;
+    padding: 1rem 0.25rem;
+    margin-top: 40px;
+}
+
+::ng-deep [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.content_dilog{
+    display: flex;
+}
+
+.border_photo_galari{
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+     
+}
+
+.desc_dilog{
+    font-size:20px
+}
+
+.btn_card{
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    background-color: orange !important;
+    transition: 0.5s linear;
+}
+
+.btn_card:hover{
+    opacity: 0.7;
+}
+
+
+@media (min-width:320px) and (max-width:767px) {
+
+    .temus_comments ul li:not(:first-child)::before {
+        display: none;
+    }
+
+    .cards {
+        width: 100%;
+    }
+    .content_dilog{
+        flex-direction: column;
+    }
+
+    .desc_dilog{
+        margin-top: 10px;
+        line-height: 20px;
+    }
+    
+}
+
+@media (min-width:767px) and (max-width:1200px){
+    .content_dilog{
+        flex-direction: column;
+    } 
+    .desc_dilog{
+        margin-top: 10px;
+        line-height: 20px;
+    }
+
+    .ele_img_dilog{
+        width: 30%;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1400px){
+    .content_dilog{
+        flex-direction: column;
+    } 
+}
+
+
+@media(min-width:1400px) and (max-width:1607px){
+    .content_dilog{
+        flex-direction: column;
+    } 
+    .desc_dilog{
+        margin-top: 10px;
+        line-height: 20px;
+    }
+}
+
