@@ -2,8 +2,6 @@
 <div class="detailas_product">
     <div class="Container">
         <div class="content_details_product">
-
-
             <div class="d-flex img_product_details">
                 <div class="img_scroll">
                     <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img1" class="img_details"
@@ -15,8 +13,6 @@
                     <video (mouseover)="sliderVideo($event)" class="video_details" *ngIf="objectDta?.video" controls
                         style="height:60%; width:100%; border-radius: 10px;" [src]="'assets/videos/' + objectDta.video"
                         muted autoplay></video>
-
-
                 </div>
                 <div class="container_img_details">
                     <img *ngIf="objectDta?.img1 && showImg" class="img_details" [src]="main_img" alt="" />

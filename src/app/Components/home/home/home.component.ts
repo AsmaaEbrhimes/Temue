@@ -8,19 +8,21 @@ import { HomeService } from '../home.service';
 })
 
 export class HomeComponent {
-    dataHome:any[]=[]
-
-    constructor(private services:HomeService){}
+    dataHome: any[] = []
+    currentIndex: number = 1
+    constructor(private services: HomeService) { }
 
     visible: boolean = false;
     visible2: boolean = false;
 
     images: any | undefined;
     EleData: any = '';
+    mainimgs: string = ''
 
 
     ngOnInit() {
         this.dataHome = this.services.AllDataHome()
+        this.mouseHoverImg()
     }
 
     responsiveOptions: any[] = [
@@ -64,13 +66,30 @@ export class HomeComponent {
                         thumbnailImageSrc: ele.img3,
                     },
                 ];
-                console.log('kkkkkk', this.EleData)
+                this.mouseHoverImg();
             }
         })
         this.visible2 = true;
     }
 
 
+    mouseHoverImg() {
+        this.mainimgs = 'assets/imges/' + (this.EleData[`img${this.currentIndex}`] || 'default.webp');
+
+    }
+    sliderprefbutton() {
+        if (this.currentIndex < 3) {
+            this.currentIndex++;
+            this.mouseHoverImg();
+        }
+    }
+
+    sliderNextbutton() {
+        if (this.currentIndex > 1) {
+            this.currentIndex--
+            this.mouseHoverImg();
+        }
+    }
 
 
 

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.pord';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
+    baseApi = environment.baseApi
 
   dataHome: any = [
     {
@@ -474,12 +477,69 @@ export class HomeService {
     },
 
 
+    {
+        "id": 55,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "img1": "a567f468-c1e9-4762-a7d8-1ff34fef5319 (1).webp",
+        "img2": "ec29a5f3-b189-4833-bc8c-108aa60ffbb0.webp",
+        "img3": "14d01795-cdc7-4e65-bcb3-38fb606f3569.webp"
+    },
 
+
+    {
+        "id": 56,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "img1": "2a208a2f-1d10-4f0e-bed0-cc9c228511a0.webp",
+        "img2": "1df17aad-622f-4304-b1ec-852b1953756f.webp",
+        "img3": "b5760576-b069-4ab3-9f2a-b247b19234db.webp"
+    },
+    {
+        "id": 57,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "video":"e16d9de5042128b023627c7be2e521cf69630ccf.f30.mp4",
+        "img1": "856ed59b01b3f38170e4293d35285794.webp",
+        "img2": "aa929e1c73648cb5fef7a4d034b02844.webp",
+        "img3": "98474bfb33c0656658a8a374e57f04e2.webp"
+    },
+    {
+        "id": 58,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "img1": "bbd60330-39ac-4776-a9f6-e58bfd47e4dd.webp",
+        "img2": "aa929e1c73648cb5fef7a4d034b02844.webp",
+        "img3": "e50ef811-0a18-4dcb-87e1-0d7e0901bb37.webp"
+    },
+
+    {
+        "id": 59,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "img1": "4fdd8158-80fc-4ce5-9fae-54fd9e11d488.webp",
+        "img2": "e7b188bc-c706-4741-af11-2aa6757f7089.webp",
+        "img3": "4c7e9f77-d1ee-41f8-b76d-ad19ba17e29b.webp"
+    },
+
+    {
+        "id": 60,
+        "title": "1pc Daisy Design Transparent Plastic Gift Bags with Ribbon Bow - Portable Party Favors Bag for Weddings and Celebrations",
+        "salary": "£1.41",
+        "img1": "df4bda7d-1026-49e7-b77e-cee4b053bd78.webp",
+        "img2": "d720d0eb-53cb-4955-ab64-fb4dc544264f.webp",
+        "img3": "b63b7c93-df53-4a08-a5c1-815daca4f8c4.webp"
+    },
 ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   AllDataHome(){
     return this.dataHome;
   }
+
+  GetAllproduct(url:any){
+      return this.http.get(`${this.baseApi}api/${url}`)
+  }
+  
 }

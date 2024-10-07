@@ -1,5 +1,4 @@
 <div class="header">
-
     <div class="container_header">
         <div class="content_header_one bg-black">
             <div class="container">
@@ -55,8 +54,6 @@
 
         <div class="content_header_two">
             <div class="container">
-
-
                 <div class="contnt_flex_header">
                     <div class="d-flex align-items-center list_one">
                         <div class="d-flex align-items-center p-3 text-white">
@@ -71,35 +68,37 @@
                             <p>5-Star Rated</p>
                         </div>
 
-                        <div class="d-flex align-items-center p-3 text-white position-relative">
+                        <div class="d-flex align-items-center p-3 text-white ">
                             <i class="fa-regular fa-thumbs-up"></i>
-                            <div class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
+                            <div (click)="ShowDropDownMenue()" class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
                                 <p>Categores</p>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="action_header">
-                        <i class="fa-solid fa-bars bars"></i>
+                        <i (click)="sidebarVisibleTwo = true" class="fa-solid fa-bars bars"></i>
                         <input type="text" />
                         <i class="fa-solid fa-magnifying-glass glass" (click)="showDialog('top')"></i>
                     </div>
 
                     <div>
-                        <ul class="d-flex justify-content-center align-items-center text-white">
+                        <ul class="d-flex justify-content-center align-items-center text-white action_langage_shopping">
                             <li>SignIn/Register<i class="fa-solid fa-user"></i></li>
-                            <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' : "en"}}<i class="fa-solid fa-globe" style="margin-left:10px; font-size:20px"></i></button></li>
-                            <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping" (click)="sidebarVisible2 = true"></i>
+                            <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' :
+                                    "en"}}<i class="fa-solid fa-globe"
+                                        style="margin-left:10px; font-size:20px"></i></button></li>
+                            <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping"
+                                    (click)="sidebarVisible2 = true"></i>
                             </li>
 
-                            <div class="card flex flex-wrap justify-content-center gap-2">
-
+                            <div class="card flex flex-wrap justify-content-center gap-2"
+                                style="z-index: 9999999999999999">
                                 <p-sidebar [(visible)]="sidebarVisible2" position="right">
                                     <h3>Right Sidebar</h3>
                                 </p-sidebar>
-
                             </div>
-
                         </ul>
                     </div>
 
@@ -112,24 +111,130 @@
     </div>
 </div>
 
-<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [position]="position" [style]="{ width: '25rem' }">
-    <span class="p-text-secondary block mb-5">
-        Update your information.
-    </span>
-    <div class="flex align-items-center gap-3 mb-3">
-        <label for="username" class="font-semibold w-6rem">
-            Username
-        </label>
-        <input pInputText id="username" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex align-items-center gap-3 mb-5">
-        <label for="email" class="font-semibold w-6rem">
-            Email
-        </label>
-        <input pInputText id="email" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex justify-content-end gap-2">
-        <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
-        <p-button label="Save" (onClick)="visible = false" />
+
+<p-dialog [modal]="true" [(visible)]="visible" [position]="position" [style]="{ width: '30rem'}">
+    <div class="p-2">
+        <div *ngIf="contentsearchone">
+            <div class="content_search">
+                <input (input)="filterSearshProduct($event)" type='text' class='inp_search' />
+                <i class="fa-solid fa-magnifying-glass seacrch_icon"></i>
+            </div>
+            <ul>
+                <li *ngFor="let item of filtervalue" class="dilog_search_li"><i
+                        class="fa-solid fa-magnifying-glass"></i>{{item.category}}</li>
+            </ul>
+            <ul *ngIf="filtervalue == ''">
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>clothing Womens</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Acceroies Mopile</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Beatuy</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Kids</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>clothing children</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>party-supplies</li>
+                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Fashion</li>
+            </ul>
+        </div>
+
+
+        <div *ngIf="contentsearchtwo">
+            <div class="content_search">
+                <input (input)="filterSearshProduct($event)" type='text' class='inp_search' />
+                <i class="fa-solid fa-magnifying-glass seacrch_icon"></i>
+            </div>
+            <h3 class="title_search_dilog">Recently searched</h3>
+
+            <div class="d-flex align-items-center justify-content-center flex-wrap contentent_search_two">
+                <div class="d-flex align-items-center" *ngFor="let item of filteredProducts">
+                    <img class="img_dilog_search" [src]='[item.image]' />
+                    <p class="desc_dilog_search"> <i class="fa-solid fa-fire-flame-curved"></i>{{item.category}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </p-dialog>
+
+
+
+
+
+
+<div *ngIf="ShowDropDown" class="d-flex content_liststs_product">
+    <ul class="">
+        <li (mouseover)="showProductHover('clothing Womens')" class=""><span>clothing Womens</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('Acceroies Mopile')" class=""><span>Acceroies Mopile</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('Beatuy')" class=""><span>Beatuy</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('Kids')" class=""><span>Kids</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('clothing children')" class=""><span>clothing children</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('party-supplies')" class=""><span>party-supplies</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+        <li (mouseover)="showProductHover('Fashion')" class=""><span>Fashion</span> <span><i
+                    class="fa-solid fa-angle-right"></i></span></li>
+    </ul>
+
+    <div style="overflow-y: auto;width: 100%;font-size: 20px;height: 50vh;padding: 20px;">
+        <div class="d-flex flex-wrap justify-content-center justify-content-around mt-3 ">
+            <div *ngFor="let item of ShowFilterArray" class="mt-5">
+                <img [src]='[item?.image]' />
+                <p>{{item?.category}}</p>
+            </div>
+        </div>
+
+
+
+        <div *ngIf="ShowFilterArray.length === 0"
+            class="d-flex flex-wrap justify-content-center justify-content-around mt-3 ">
+            <div *ngFor="let item of filteredProducts" class="mt-3">
+                <img [src]='[item?.image]' />
+                <p>{{item?.category}}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="flex justify-content-center">
+    <p-sidebar [(visible)]="sidebarVisibleTwo">
+        <div class=" ">
+            <div class="d-flex align-items-center p-3 text-white">
+                <div class=" d-flex align-items-center">
+                    <i class="fa-solid fa-icons sidebar_icon"></i>
+                    <p class="sidebar_desc">Best Sellers</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center p-3 text-white">
+                <i class="fa-regular fa-star sidebar_icon"></i>
+                <p class="sidebar_desc">5-Star Rated</p>
+            </div>
+
+            <div class="d-flex align-items-center p-3 text-white ">
+                <i class="fa-regular fa-thumbs-up sidebar_icon"></i>
+                <div class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
+                    <p class="sidebar_desc">Categores</p>
+                </div>
+
+            </div>
+            <div class="d-flex align-items-center p-3 text-white">
+                <i class="fa-solid fa-user sidebar_icon"></i>
+                <p class="sidebar_desc">SignIn/Register</p>
+            </div>
+
+            <ul class="sidebar_list_lang mt-4">
+                <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' :
+                        "en"}}<i class="fa-solid fa-globe" style="margin-left:10px; font-size:20px"></i></button></li>
+                <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping"
+                        (click)="sidebarVisible2 = true"></i>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </p-sidebar>
+</div>
