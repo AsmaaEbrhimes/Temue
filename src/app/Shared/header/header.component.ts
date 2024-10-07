@@ -15,6 +15,7 @@ export class HeaderComponent {
 
   sidebarVisible: boolean = false;
   visible: boolean = false;
+  visible2: boolean = false;
   position: any = { top: '10%', left: '20%' };
   sidebarVisible1: boolean = false;
   sidebarVisible2: boolean = false;
@@ -24,8 +25,8 @@ export class HeaderComponent {
   contentsearchtwo: boolean = true
   filteredProducts: any[] = [];
   ShowFilterArray: any[] = []
-ShowDropDown:boolean=false
-sidebarVisibleTwo: boolean = false;
+  ShowDropDown: boolean = false
+  sidebarVisibleTwo: boolean = false;
 
 
   filtervalue: any = ''
@@ -55,45 +56,45 @@ sidebarVisibleTwo: boolean = false;
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'clothing Womens')
-        } 
+        }
       })
       console.log(this.ShowFilterArray)
-    } else if(text == 'Acceroies Mopile'){
+    } else if (text == 'Acceroies Mopile') {
       console.log('yes')
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'Acceroies Mopile')
-        } 
+        }
       })
-    }else if(text == 'Beatuy'){
+    } else if (text == 'Beatuy') {
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'Beatuy')
-        } 
+        }
       })
-    }else if(text == 'Kids'){
+    } else if (text == 'Kids') {
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'Kids')
-        } 
+        }
       })
-    }else if(text == 'clothing children'){
+    } else if (text == 'clothing children') {
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'clothing children')
-        } 
+        }
       })
-    }else if(text == 'party-supplies'){
+    } else if (text == 'party-supplies') {
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'party-supplies')
-        } 
+        }
       })
-    }else if(text == 'Fashion'){
+    } else if (text == 'Fashion') {
       this.services.GetAllproduct('product/All').subscribe({
         next: (res: any) => {
           this.ShowFilterArray = res.filter((res: any) => res.category == 'Fashion')
-        } 
+        }
       })
       console.log(this.ShowFilterArray)
     }
@@ -141,8 +142,12 @@ sidebarVisibleTwo: boolean = false;
   }
 
 
-  ShowDropDownMenue(){
+  ShowDropDownMenue() {
     this.ShowDropDown = !this.ShowDropDown
+  }
+
+  ShowDilog(){
+    this.visible2 = true
   }
 }
 

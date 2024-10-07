@@ -216,7 +216,7 @@
             <div class="d-flex align-items-center p-3 text-white ">
                 <i class="fa-regular fa-thumbs-up sidebar_icon"></i>
                 <div class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
-                    <p class="sidebar_desc">Categores</p>
+                    <p class="sidebar_desc" (click)="ShowDilog()">Categores</p>
                 </div>
 
             </div>
@@ -239,7 +239,20 @@
     </p-sidebar>
 </div>
 
-<h1>wyuyreyruruy</h1>
-<h1>wyuyreyruruy</h1>
-<h1>wyuyreyruruy</h1>
-<h1>wyuyreyruruy</h1>
+
+
+
+
+
+<p-dialog 
+    header="Header" 
+    [(visible)]="visible2" 
+    [modal]="true" 
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+    [style]="{ width: '50vw' }" 
+    [draggable]="false" 
+    [resizable]="false">
+        <p>
+            Lorem ipsum dolor sit amet...
+        </p>
+</p-dialog>

@@ -379,10 +379,12 @@ ul {
 .sidebar_desc {
     margin-left: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .sidebar_icon {
     font-size: 20px;
+    cursor: pointer;
 }
 
 .sidebar_list_lang {
