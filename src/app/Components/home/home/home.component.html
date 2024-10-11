@@ -46,11 +46,10 @@
     </div>
 </div>
 
-
 <div class="main_product">
     <div class="Container">
         <div>
-            <img class="mt-2" style="width: 400px;margin:auto;text-align:center;display:block"
+            <img class="mt-2 d-block text-center mx-auto" style="width: 400px"
                 src='assets/imges/a46b4cb8-c9e5-4ed9-80da-6c1cc37a4d44.webp' />
             <h1 style="font-weight: bolder;margin:auto;text-align:center">Explore Your Interests</h1>
         </div>
@@ -93,12 +92,14 @@
 
     </div>
 
+
+
     <div class="card flex justify-content-center">
         <p-dialog [(visible)]="visible2" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
             [style]="{ width: '60vw' }" [draggable]="false" [resizable]="false">
             <div class="content_dilog">
-                <div class="content_dilog_img">
-                    <div style="position: relative ;display: flex; align-items: center;margin-left: 20px;">
+                <div class="content_dilog_img text-center w-50 mx-auto">
+                    <div class="position-relative d-flex align-items-center me-3">
 
                         <span (click)="sliderprefbutton()" class="slide_left"><i
                                 class="fa-solid fa-angle-left"></i></span>
@@ -162,9 +163,6 @@
 
 
 
-<div class="Fedback_and_message">
-    <div><i class="fa-regular fa-comment-dots"></i><p>Message</p></div>
-    <div><i class="fa-regular fa-clipboard"></i><p>Fedeback</p></div>
-    <div><i class="fa-solid fa-angle-up"></i><p>Top</p></div>
-</div>
+
+<app-supscrption></app-supscrption>
 <app-footer></app-footer>

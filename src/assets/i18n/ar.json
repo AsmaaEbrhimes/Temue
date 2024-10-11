@@ -1,20 +1,18 @@
 {
-    "register":{
-        "CreateAccount":"تسجيل حساب جديد"
+    "register": {
+        "CreateAccount": "تسجيل حساب جديد"
     },
-
-    "Login":{
-        "login":"تسجيل الدخول"
+    "Login": {
+        "login": "تسجيل الدخول"
     },
-
-   
-    "Installment":{
-        "installment":"3 أقساط شهرية بدون فوائد",
-        "delvire":"شحن مجاني خاص لك",
-        "almost":"نفدت الكمية تقريبًا",
-        "Qty":"الكميه",
-        "Add" :"اضف الي السله"
-
-        }
-    
+    "Installment": {
+        "installment": "3 أقساط شهرية بدون فوائد",
+        "delvire": "شحن مجاني خاص لك",
+        "almost": "نفدت الكمية تقريبًا",
+        "Qty": "الكميه",
+        "Add": "اضف الي السله"
+    },
+    "Home": {
+        "Continue": "تخطي"
+    }
 }

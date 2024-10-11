@@ -252,15 +252,6 @@ button:not(:disabled) {
     opacity: 0.7;
 }
 
-
-
-.content_dilog_img {
-    width: 50%;
-    text-align: center;
-    margin: auto;
-}
-
-
 .chaild_content_dilog_img {
     width: 100%;
     text-align: left;

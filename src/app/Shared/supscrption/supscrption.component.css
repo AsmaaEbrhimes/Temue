@@ -1,0 +1,21 @@
+.Fedback_and_message {
+    position: fixed;
+    border-radius: 10px;
+    padding: 10px;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    cursor:pointer ;
+    z-index: 4444444444444444444;
+
+}
+
+.Fedback_and_message div i {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}

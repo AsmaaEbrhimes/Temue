@@ -9,11 +9,14 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { BadgeModule } from 'primeng/badge';
 import { FooterComponent } from './footer/footer.component';
-
+import { AccordionModule } from 'primeng/accordion';
+import { SupscrptionComponent } from './supscrption/supscrption.component';
+import { TranslatingModule } from './translating/translating.module';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SupscrptionComponent
   ],
   imports: [
     CommonModule,
@@ -22,11 +25,14 @@ import { FooterComponent } from './footer/footer.component';
     SharedRoutingModule,
     DialogModule,
     InputTextModule,
-    BadgeModule
+    BadgeModule,
+    AccordionModule,
+    TranslatingModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    SupscrptionComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }
