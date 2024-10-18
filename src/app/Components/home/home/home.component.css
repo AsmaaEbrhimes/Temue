@@ -585,60 +585,63 @@ button:not(:disabled) {
 
 
 
-.item_card{
+.item_card {
     overflow: hidden;
 }
 
 
-.item_card div{
+.item_card div {
     background-color: white;
     cursor: pointer;
     border-radius: 10px;
 }
 
-.item_card video , .item_card .img_card  {
-    height: 300px;
+.item_card video,
+.item_card .img_card {
+    height: 230px;
     border-radius: 10px;
     transition: 0.3s linear;
 }
 
-.item_card .img_card:hover{
+.item_card .img_card:hover {
     transform: scale(1.1);
 }
 
-.item_card video:hover{
+.item_card video:hover {
     transform: scale(1.1);
 }
 
-.titlt__shoping{
-font-size: 20px;
-}
-.titlt__shoping p:first-child{
-    color:#FFA500
+.titlt__shoping {
+    font-size: 20px;
 }
 
-.titlt__shoping i{
-    border: 1px solid #FFA500;
+.titlt__shoping p:first-child {
+    color: #FFA500
+}
+
+.titlt__shoping i {
+    border: 1px solid black;
     border-radius: 20px;
     position: relative;
-    top:-10px;
-    color:#FFA500
-
+    top: -10px;
+    color: black
 }
 
-.desc_product_deatils p:first-child{
+.desc_product_deatils p:first-child {
     font-size: 15px;
     color: gray;
 }
-.desc_product_deatils p:nth-child(2) span{
-    color:#FB8318;
+
+.desc_product_deatils p:nth-child(2) span {
+    color: #FB8318;
     font-weight: bold;
     font-size: 15px;
 }
-.desc_product_deatils p:nth-child(3){
-color: rgb(253,202,155) ;
-font-weight: bold;
-font-size: 15px;
+
+.desc_product_deatils p:nth-child(3) {
+    color: rgb(253, 202, 155);
+    font-weight: bold;
+    font-size: 15px;
 
 }
 
@@ -647,33 +650,4 @@ font-size: 15px;
     background-image: url('../../../../assets/imges/5ae4a0c1-285b-4149-80fa-890aff2ae8ca.webp');
     background-repeat: no-repeat;
     background-size: contain;
-   
-}
-.content_shopping_cart div p{
-    font-size: 15px;
-}
-
-
-.subtotal p:first-child{
-    font-size: 20px !important;
-    font-weight: bold;
-}
-
-.subtotal{
-    background-color: #fff3e7;
-    border-radius: 5px;
-
-}
-.salary_sup p:first-child{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.sup_total_button button:first-child{
-    background-color: #FB8318;
-}
-
-.sup_total_button button:nth-child(2){
-    border: 1px solid gray !important;
-    color: black !important;
 }

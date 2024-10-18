@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div clss="main_page">
-
     <img class="w-100 bg-warning" src="assets/imges/b3ce0e1c-6b21-4243-9e57-637e6838a540.webp" alt="" />
     <div class="temus_comments_main mt-3">
         <div class="Container">
@@ -40,9 +39,7 @@
                         <p
                             style="margin:auto ; text-align:center ; width: 50%; padding-bottom: 20px; padding-top: 20px;">
                             If you come across anything suspicious, please report it in time</p>
-
                     </div>
-
                 </p-dialog>
             </div>
         </div>
@@ -57,51 +54,8 @@
                 <h1 style="font-weight: bolder;margin:auto;text-align:center">Explore Your Interests</h1>
             </div>
 
-
-
-            <!-- <div class="mt-1 main_product_flex" *ngIf="dataHome">
-                    <div *ngFor="let item of dataHome" class="cards">
-                        <div class="item_card ">
-                            <ng-container *ngIf="item.video; else showImage">
-                                <video controls [routerLink]="['detailsproducr', item.id]"
-                                    src="assets/videos/{{item.video}}" muted autoplay></video>
-                            </ng-container>
-
-                            <ng-template #showImage>
-                                <img src="assets/imges/{{item.img1}}" alt="Image"
-                                    [routerLink]="['detailsproducr', item.id]" />
-                            </ng-template>
-                            <div class="d-flex justify-content-around align-items-center mt-4">
-                                <p style="color:orange; font-size:25px">{{item.salary}}</p>
-                                <p class="discount">45%</p>
-                                <i class="fa-solid fa-bag-shopping" (click)="showDialog2(item.id)"
-                                    style="font-size:30px; cursor:pointer; color:orange; top:-10px; position: relative;"></i>
-                            </div>
-                            <div class="desc_card">
-                                <p>Bell Decor Embossed Newboy....</p>
-                                <p><span>£1.41</span> 5.5+ solid</p>
-                                <p>Only 11 left</p>
-
-                                <div>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-              
-
-
-
-
-
-
-        </div> -->
-
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-sm-12 col-md-12 col-xl-11">
                     <div class="row">
                         <div *ngFor="let item of dataHome" class=" col-6 col-sm-6 col-md-4 col-xl-2">
                             <div class="item_card w-100 mt-2">
@@ -119,8 +73,7 @@
                                     <div class="d-flex justify-content-around  mt-4 titlt__shoping">
                                         <p>{{item.salary}}</p>
                                         <p class="discount text-success fw-bold">45%</p>
-                                        <i class="fa-solid fa-bag-shopping ps-3 pe-3 pt-1"
-                                            (click)="showDialog2(item.id)"></i>
+                                        <i class="fa-solid fa-bag-shopping ps-3 pe-3 pt-1"(click)="dialog.open(item.id)"></i>
                                     </div>
 
                                     <div class="desc_product_deatils">
@@ -140,101 +93,64 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-1 bg-light p-0 position-relative content_shopping_cart">
-                    <div class="d-flex justify-content-center align-items-center mt-3">
-                        <p>SupTotal</p>
-                        <p><i class="fa-solid fa-bag-shopping ps-1"></i></p>
-                    </div>
 
-                    <div class="text-center mt-2 p-1 salary_sup">
-                        <p>£3.99</p>
-                        <div class="d-flex align-items-cente subtotal p-1">
-                            <p class="mt-3"><i class="fa-solid fa-check text-success"></i></p>
-                            <p>Free shipping special for you</p>
-                        </div>
-                    </div>
-                  
-
-                    <div class="mt-4 text-center sup_total_button p-2">
-                        <button class="w-100 mb-2  border-0 rounded-pill text-light p-2">CheckOut<span>(9)</span></button>
-                        <button class="w-100 border-0 rounded-pill text-light p-2">Go To Cart</button>
-                    </div>
                 </div>
+                <div class="col-sm-0   col-md-0 col-xl-1 bg-light p-0 position-relative content_shopping_cart">
+                    <app-sup-total></app-sup-total>
+                </div>
+           
             </div>
         </div>
-
-        <!-- <div class="card flex justify-content-center">
-        <p-dialog [(visible)]="visible2" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-            [style]="{ width: '60vw' }" [draggable]="false" [resizable]="false">
-            <div class="content_dilog">
-                <div class="content_dilog_img text-center w-50 mx-auto">
-                    <div class="position-relative d-flex align-items-center me-3">
-
-                        <span (click)="sliderprefbutton()" class="slide_left"><i
-                                class="fa-solid fa-angle-left"></i></span>
-
-                        <img class="" [src]="mainimgs" alt="" />
-                        <span (click)="sliderNextbutton()" class="slide_right"><i
-                                class="fa-solid fa-angle-right"></i></span>
-
-                    </div>
-
-
-                    <div class="d-flex justify-content-center chaild_content_dilog_img">
-                        <img class="chiald_img"
-                            [src]="EleData.img1 ? 'assets/imges/' + EleData.img1 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                            alt="" />
-                        <img class="chiald_img"
-                            [src]="EleData.img2 ? 'assets/imges/' + EleData.img2 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                            alt="" />
-                        <img class="chiald_img"
-                            [src]="EleData.img3 ? 'assets/imges/' + EleData.img3 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                            alt="" />
-
-                    </div>
-                </div>
-
-                <div class="content_dilog_desc">
-                    <p class="desc_dilog">{{EleData.title}}</p>
-                    <p><span class="best_seller">#8 Best Seller</span><span>from this provider</span></p>
-                    <p><span class="last_span">Last 3 days</span> <span>{{EleData.salary}}</span><span>RRP£8.49</span>
-                    </p>
-                    <div class="content_color_desc">
-
-
-                        <p class="light_deal_desc">Lightning deal<img style="width:100px"
-                                src="assets/imges/404e20b4-4841-4551-8d7c-073b3ce2354a.png.slim.webp" /> -76% last 3
-                            days</p>
-                        <div class="d-flex">
-                            <img class="chiald_img_color"
-                                [src]="EleData.img1 ? 'assets/imges/' + EleData.img1 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                                alt="" />
-                            <img class="chiald_img_color"
-                                [src]="EleData.img2 ? 'assets/imges/' + EleData.img2 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                                alt="" />
-                            <img class="chiald_img_color"
-                                [src]="EleData.img3 ? 'assets/imges/' + EleData.img3 : 'assets/imges/0b336583-85af-44eb-99bc-0e482fe884db.webp'"
-                                alt="" />
-                        </div>
-                    </div>
-                    <button class="btn_card">Add To Card</button>
-                    <p class="mt-4" style="color: #d6d6d6;margin-right: 5px;"><i
-                            class="fa-solid fa-circle-exclamation"></i>Provided by YUBI. Ships from Temu.</p>
-
-
-
-                </div>
-            </div>
-        </p-dialog>
-    </div> -->
     </div>
 </div>
 
-<div>
 
-</div>
 
 
 <app-supscrption></app-supscrption>
 <app-footer></app-footer>
+<app-dilog-product-home #dialog></app-dilog-product-home>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

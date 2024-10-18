@@ -12,11 +12,15 @@ import { GalleriaModule } from 'primeng/galleria';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DtailsProductComponent } from './dtails-product/dtails-product.component';
+import { SupTotalComponent } from './sup-total/sup-total.component';
+import { DilogProductHomeComponent } from './dilog-product-home/dilog-product-home.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DtailsProductComponent
+    DtailsProductComponent,
+    SupTotalComponent,
+    DilogProductHomeComponent
   ],
   imports: [
     CommonModule,
