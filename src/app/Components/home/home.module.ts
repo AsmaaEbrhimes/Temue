@@ -14,13 +14,15 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DtailsProductComponent } from './dtails-product/dtails-product.component';
 import { SupTotalComponent } from './sup-total/sup-total.component';
 import { DilogProductHomeComponent } from './dilog-product-home/dilog-product-home.component';
+import { DetailsRighrProductComponent } from './details-righr-product/details-righr-product.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     DtailsProductComponent,
     SupTotalComponent,
-    DilogProductHomeComponent
+    DilogProductHomeComponent,
+    DetailsRighrProductComponent
   ],
   imports: [
     CommonModule,

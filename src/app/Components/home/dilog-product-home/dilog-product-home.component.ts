@@ -31,7 +31,6 @@ export class DilogProductHomeComponent {
 
   }
   updateMainImg() {
-    // تحقق من وجود الصورة قبل تحديث mainImg
     const imgKey = `img${this.currentIndex}`;
     this.mainImg = this.findProduct[imgKey] 
       ? `assets/imges/${this.findProduct[imgKey]}` 
