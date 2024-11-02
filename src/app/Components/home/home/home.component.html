@@ -1,105 +1,89 @@
-<app-header></app-header>
-<div clss="main_page">
-    <img class="w-100 bg-warning" src="assets/imges/b3ce0e1c-6b21-4243-9e57-637e6838a540.webp" alt="" />
-    <div class="temus_comments_main mt-3">
-        <div class="Container">
-            <div class="temus_comments" (click)="showDialog()">
-                <div class="d-flex justify-content-between align-items-center flex-wrap">
-                    <h4>Temu's Commitments</h4>
-                    <ul class=" d-flex flex-wrap">
-                        <li><i class="fa-solid fa-lock"></i> Secure</li>
-                        <li><i class="fa-regular fa-credit-card"></i> Save Payments</li>
-                        <li><i class="fa-solid fa-truck"></i> Delivery guarantee</li>
-                    </ul>
-                </div>
-                <div class="temus_comments_two d-flex justify-content-between align-items-center">
-                    <h4> <i style="color: green" class="fa-solid fa-bell"></i> Be wary of about delivery issues
-                        claming
-                        to be from Evri <i class="fa-solid fa-angle-right"></i></h4>
-                    <h4>View</h4>
-                </div>
-
-
-                <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
-                    [breakpoints]="{ '1199px': '100vw', '575px': '90vw' }" [maximizable]="true">
-                    <img style="width:150px ; margin:auto ; text-align:center ; display:block"
-                        src="assets/imges/a7686991-ab20-4b49-a016-82ca928f32c1.png.slim.webp" />
-
-                    <div class="m-auto text-center p-3">
-                        <h3>Security reminder</h3>
-                        <p class="w-100">Do not click on any links or pay any fees if you receive a message
-                            claiming
-                            to
-                            be from Evri about delivery issues due to an incorrect address. You should check the
-                            status
-                            of your package on Temu's order page or contact the courier directly.</p>
-                    </div>
-                    <button (click)="visible = false" class="btn_dilog">Ok</button>
-                    <div>
-                        <p
-                            style="margin:auto ; text-align:center ; width: 50%; padding-bottom: 20px; padding-top: 20px;">
-                            If you come across anything suspicious, please report it in time</p>
-                    </div>
-                </p-dialog>
-            </div>
-        </div>
-    </div>
-
-
+<div>
     <div class="main_product">
-        <div class="Container">
-            <div>
-                <img class="mt-2 d-block text-center mx-auto" style="width: 400px"
-                    src='assets/imges/a46b4cb8-c9e5-4ed9-80da-6c1cc37a4d44.webp' />
-                <h1 style="font-weight: bolder;margin:auto;text-align:center">Explore Your Interests</h1>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-xl-11">
+
+  
+
+        <div class="row overflow-hidden">
+
+            <div class="col__1 marginTop">
+                <app-header></app-header>
+                <img class="w-100 bg-warning" src="assets/imges/b3ce0e1c-6b21-4243-9e57-637e6838a540.webp" alt="" />
+                <div class="Container">
+                    <app-header-home></app-header-home>
+
+                    <div>
+                        <img class="mt-2 d-block text-center mx-auto" style="width: 400px"
+                            src='assets/imges/a46b4cb8-c9e5-4ed9-80da-6c1cc37a4d44.webp' />
+                        <h1 style="font-weight: bolder;margin:auto;text-align:center">Explore Your Interests</h1>
+                    </div>
+
                     <div class="row">
-                        <div *ngFor="let item of dataHome" class=" col-6 col-sm-6 col-md-4 col-xl-2">
-                            <div class="item_card w-100 mt-2">
-                                <div class="p-2">
-                                    <ng-container *ngIf="item.video; else showImage">
-                                        <video class="w-100 " src="assets/videos/{{item.video}}" muted autoplay
-                                            [routerLink]="['detailsproducr', item.id]"></video>
-                                    </ng-container>
+                        <div class="col-sm-12 col-md-12 col-xl-12 bg-md-danger">
+                            <div class="row">
+                                <div *ngFor="let item of dataHome" class=" col-6 col-sm-6 col-md-4 col-xl-2">
+                                    <div class="item_card  w-100 mt-2">
+                                        <div class="p-sm-0 p-md-2  p-xl-2">
+                                            <ng-container *ngIf="item.video; else showImage">
+                                                <video class="w-100 " src="assets/videos/{{item.video}}" muted autoplay
+                                                    [routerLink]="['detailsproducr', item.id]"></video>
+                                            </ng-container>
+                                            <ng-template #defaultVideo>
+                                                <video class="w-100" src="assets/videos/default-video.mp4" muted
+                                                    autoplay [routerLink]="['detailsproducr', item.id]">
+                                                </video>
+                                            </ng-template>
 
-                                    <ng-template #showImage>
-                                        <img class="w-100 img_card" src="assets/imges/{{item.img1}}" alt="Image"
-                                            [routerLink]="['detailsproducr', item.id]" />
-                                    </ng-template>
+                                            <ng-template #showImage>
+                                                <img class="w-100 img_card" src="assets/imges/{{item.img1}}" alt="Image"
+                                                    [routerLink]="['detailsproducr', item.id]" />
+                                            </ng-template>
 
-                                    <div class="d-flex justify-content-around  mt-4 titlt__shoping">
-                                        <p>{{item.salary}}</p>
-                                        <p class="discount text-success fw-bold">45%</p>
-                                        <i class="fa-solid fa-bag-shopping ps-3 pe-3 pt-1"(click)="dialog.open(item.id)"></i>
-                                    </div>
+                                            <div class="d-flex justify-content-around  mt-4 titlt__shoping">
+                                                <p>{{item.salary}}</p>
+                                                <p class="discount text-success fw-bold">45%</p>
+                                                <i class="fa-solid fa-bag-shopping  ps-3 pe-3 pt-1"
+                                                    (click)="dialog.open(item.id)"></i>
+                                            </div>
 
-                                    <div class="desc_product_deatils">
-                                        <p>Bell Decor Embossed Newboy....</p>
-                                        <p><span>£1.41</span> 5.5+ solid</p>
-                                        <p>Only 11 left</p>
+                                            <div class="desc_product_deatils">
+                                                <p>Bell Decor Embossed Newboy....</p>
+                                                <p><span>£1.41</span> 5.5+ solid</p>
+                                                <p>Only 11 left</p>
 
 
-                                        <div>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                                <div>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
+
                     </div>
 
+
                 </div>
-                <div class="col-sm-0   col-md-0 col-xl-1 bg-light p-0 position-relative content_shopping_cart">
-                    <app-sup-total></app-sup-total>
-                </div>
-           
+
+                <app-footer></app-footer>
             </div>
+
+            <div class=" content_shopping_cart bg-light  overflow-hidden p-0 col__2">
+                <div class=" d-sm-none d-md-none d-xl-block">
+                    <app-supscrption></app-supscrption>
+
+                </div>
+                <app-sup-total></app-sup-total>
+            </div>
+
+
         </div>
     </div>
 </div>
@@ -107,50 +91,7 @@
 
 
 
-<app-supscrption></app-supscrption>
-<app-footer></app-footer>
-<app-dilog-product-home #dialog></app-dilog-product-home>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="position-fixed position-fixed">
+    <app-dilog-product-home #dialog></app-dilog-product-home>
+</div>

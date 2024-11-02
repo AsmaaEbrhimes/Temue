@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.custem_style_dilog{
+    position: relative;
+    top:100px !important;
+    background-color: red;
+}
+
 p {
     margin: 0;
 }
@@ -90,6 +96,17 @@ background-color: #fb7701;
     position: relative;
 }
 
+
+
+/* ::ng-deep .p-dialog {
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    max-height: 90%;
+    transform: scale(1);
+    position: relative;
+    top: 10px !important;
+} */
 img{
     cursor: pointer;
 }

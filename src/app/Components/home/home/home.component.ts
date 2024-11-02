@@ -17,30 +17,23 @@ export class HomeComponent {
     images: any | undefined;
     EleData: any = '';
     mainimgs: string = ''
+    cartmainarray: any[] = []; 
+
 
 
     ngOnInit() {
         this.dataHome = this.services.AllDataHome()
+
     }
 
-    // responsiveOptions: any[] = [
-    //     {
-    //         breakpoint: '1024px',
-    //         numVisible: 5
-    //     },
-    //     {
-    //         breakpoint: '768px',
-    //         numVisible: 3
-    //     },
-    //     {
-    //         breakpoint: '560px',
-    //         numVisible: 1
-    //     }
-    // ];
-
+   
 
     showDialog() {
         this.visible = true;
     }
 
+
+    
+
 }
+

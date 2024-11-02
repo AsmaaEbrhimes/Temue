@@ -15,6 +15,7 @@ import { DtailsProductComponent } from './dtails-product/dtails-product.componen
 import { SupTotalComponent } from './sup-total/sup-total.component';
 import { DilogProductHomeComponent } from './dilog-product-home/dilog-product-home.component';
 import { DetailsRighrProductComponent } from './details-righr-product/details-righr-product.component';
+import { HeaderHomeComponent } from './header-home/header-home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailsRighrProductComponent } from './details-righr-product/details-ri
     DtailsProductComponent,
     SupTotalComponent,
     DilogProductHomeComponent,
-    DetailsRighrProductComponent
+    DetailsRighrProductComponent,
+    HeaderHomeComponent
   ],
   imports: [
     CommonModule,

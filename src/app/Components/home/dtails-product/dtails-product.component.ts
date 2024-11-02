@@ -15,6 +15,7 @@ export class DtailsProductComponent {
   main_video:any
   showVideo:boolean=false
   showImg:boolean=true
+  currentIndex: number = 1
   constructor(private route: ActivatedRoute, private services: HomeService) { }
 
   ngOnInit(): void {
@@ -49,6 +50,32 @@ export class DtailsProductComponent {
     this.showVideo = srcVideo
     this.showVideo = true 
     this.showImg = false
-
   }
+
+  updateMainMedia() {
+    const imgKey = `img${this.currentIndex + 1}`; 
+    this.main_img = 'assets/imges/' + this.objectDta[imgKey]; 
+}
+
+AnglSlideOne() {
+    if (this.currentIndex > 0) {
+        this.currentIndex--; 
+    }
+    this.updateMainMedia();
+}
+
+AnglSlideTwo() {
+    const totalImages = Object.keys(this.objectDta).filter(key => key.startsWith('img')).length; 
+    if (this.currentIndex < totalImages - 1) { 
+        this.currentIndex++; 
+    }
+    this.updateMainMedia();
+}
+
+
+
+
+
+
+  
 }

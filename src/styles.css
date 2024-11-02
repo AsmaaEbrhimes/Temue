@@ -40,3 +40,12 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+img{
+    cursor: pointer;
+}
+
+input:focus{
+    border: none;
+    outline: none;
+}

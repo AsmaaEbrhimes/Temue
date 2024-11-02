@@ -12,11 +12,20 @@ import { FooterComponent } from './footer/footer.component';
 import { AccordionModule } from 'primeng/accordion';
 import { SupscrptionComponent } from './supscrption/supscrption.component';
 import { TranslatingModule } from './translating/translating.module';
+import { Header2Component } from './header/header2/header2.component';
+import { ProductHeaderComponent } from './product-header/product-header.component';
+import { FilterProductComponent } from './filter-product/filter-product.component';
+import { SuccessComponent } from './success/success.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SupscrptionComponent
+    SupscrptionComponent,
+    Header2Component,
+    ProductHeaderComponent,
+    FilterProductComponent,
+    SuccessComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +42,7 @@ import { TranslatingModule } from './translating/translating.module';
     HeaderComponent,
     SupscrptionComponent,
     FooterComponent,
+    SuccessComponent
   ]
 })
 export class SharedModule { }

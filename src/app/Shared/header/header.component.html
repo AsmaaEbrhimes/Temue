@@ -1,270 +1,96 @@
-<div class="header">
-    <div class="container_header">
-        <div class="content_header_one bg-black">
-            <div class="container">
-                <ul class="d-flex align-items-center justify-content-between flex-wrap list_header_one">
-                    <li class="d-flex align-items-center" style="color:#FFF7A7;">
-                        <div>
-                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
-                        </div>
-                        <div>
-                            <div class="anmit_1">
-                                <p>Free Shipping</p>
-                                <p>Special for you</p>
-                            </div>
-                            <div class="anmit_2">
-                                <p>Free Shipping</p>
-                                <p>Special for you</p>
-                            </div>
 
-                            <div class="anmit_3">
-                                <p>Free Shipping</p>
-                                <p>Special for you</p>
-                            </div>
-                        </div>
+<app-filter-product #filter></app-filter-product>
+<div>
+<div class="bg-black mb-0  p-0 m-0">
+    <div class="container">
+        <app-header2></app-header2>
+    </div>
+</div>
 
-                    </li>
+<div class="content_header_two p-0 mb-0">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between text-light p-2">
+            <div>
+                <h1>Tamue</h1>
+            </div>
 
-                    <li class="d-flex align-items-center active" style="color:#FFF7A7;">
-                        <div>
-                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
-                        </div>
-                        <div>
-                            <p>Free Shipping</p>
-                            <p>Special for you</p>
-                        </div>
+            <div class="List_header_one">
+                <ul class="d-flex align-items-center">
+                    <li class="p-2"><i class="fa-regular fa-thumbs-up d-none d-xl-inline"></i>Beast Sellers</li>
+                    <li class="p-2">5-Star Rated</li>
+                    <li (mouseover)="filter.SHOWFILTERTION()" class="p-2"> <i class="fa-solid fa-icons d-none d-xl-inline"></i>Categores</li>
+                    <li class="p-2"> <i class="fa-solid fa-road-lock d-none d-xl-inline"></i>Free</li>
+                </ul>
+            </div>
 
-                    </li>
+            <div class="d-flex align-items-center position-relative">
+                <input class="border-0 rounded-pill " type="text" />
+                <div style="position: absolute">
+                </div>
+               
+                <i (click)="dialog.showDialog()" class="fa-solid fa-magnifying-glass position-absolute text-light rounded-5 text-center bg-black"></i>
+            </div>
 
-                    <li class="d-flex align-items-center" style="color:#FFF7A7;">
-                        <div>
-                            <i class="fa-solid fa-truck" style="font-size:30px ; margin-right:10px"></i>
-                        </div>
-                        <div>
-                            <p>Free Shipping</p>
-                            <p>Special for you</p>
-                        </div>
-
-                    </li>
+            <div class="list_responsive">
+                <ul class="d-flex align-items-center">
+                    <li class="p-1"><i class="fa-solid fa-list-ul"></i></li>
+                    <li class="p-1"><i class="fa-solid fa-basket-shopping"></i></li>
+                    <li class="p-1"> <i class="fa-solid fa-user"></i></li>
                 </ul>
             </div>
 
 
-        </div>
+            <div class="List_header_three">
+                <ul class="d-flex align-items-center">
+                    <li class="p-2">SignIn/Register<i class="fa-solid fa-user d-none d-xl-inline"></i></li>
+                    <li class=" p-2"><i class="fa-solid fa-headset d-sm-none  d-md-none d-xl-inline"></i>Support</li>
+                    <li class="p-2 d-flex align-items-center"><button class="border-0 p-2 rounded"
+                            (click)="ChangLanguage()">{{lang == 'en'? 'ar' :
+                            "en"}}<i class="fa-solid fa-globe ps-2 d-sm-none  d-md-none d-xl-inline"></i></button></li>
 
-        <div class="content_header_two">
-            <div class="container">
-                <div class="contnt_flex_header">
-                    <div class="d-flex align-items-center list_one">
-                        <div class="d-flex align-items-center p-3 text-white">
-                            <div class=" d-flex align-items-center">
-                                <i class="fa-solid fa-icons"></i>
-                                <p>Best Sellers</p>
-                            </div>
-                        </div>
+                    <li class="p-2"><i (click)="sidebarVisible2 = true"></i></li>
+                    <li class="p-2 bg-black rounded shopping"><i class="fa-solid fa-basket-shopping"></i></li>
 
-                        <div class="d-flex align-items-center p-3 text-white">
-                            <i class="fa-regular fa-star"></i>
-                            <p>5-Star Rated</p>
-                        </div>
-
-                        <div class="d-flex align-items-center p-3 text-white ">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <div (click)="ShowDropDownMenue()" class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
-                                <p>Categores</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="action_header">
-                        <i (click)="sidebarVisibleTwo = true" class="fa-solid fa-bars bars"></i>
-                        <input type="text" />
-                        <i class="fa-solid fa-magnifying-glass glass" (click)="showDialog('top')"></i>
-                    </div>
-
-                    <div>
-                        <ul class="d-flex justify-content-center align-items-center text-white action_langage_shopping">
-                            <li>SignIn/Register<i class="fa-solid fa-user"></i></li>
-                            <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' :
-                                    "en"}}<i class="fa-solid fa-globe"
-                                        style="margin-left:10px; font-size:20px"></i></button></li>
-                            <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping"
-                                    (click)="sidebarVisible2 = true"></i>
-                            </li>
-
-                            <div class="card flex flex-wrap justify-content-center gap-2"
-                                style="z-index: 9999999999999999">
-                                <p-sidebar [(visible)]="sidebarVisible2" position="right">
-                                    <h3>Right Sidebar</h3>
-                                </p-sidebar>
-                            </div>
-                        </ul>
-                    </div>
-
-                </div>
-
+                </ul>
             </div>
-
 
         </div>
     </div>
 </div>
-
-
-<p-dialog [modal]="true" [(visible)]="visible" [position]="position" [style]="{ width: '30rem'}">
-    <div class="p-2">
-        <div *ngIf="contentsearchone">
-            <div class="content_search">
-                <input (input)="filterSearshProduct($event)" type='text' class='inp_search' />
-                <i class="fa-solid fa-magnifying-glass seacrch_icon"></i>
-            </div>
-            <ul>
-                <li *ngFor="let item of filtervalue" class="dilog_search_li"><i
-                        class="fa-solid fa-magnifying-glass"></i>{{item.category}}</li>
-            </ul>
-            <ul *ngIf="filtervalue == ''">
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>clothing Womens</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Acceroies Mopile</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Beatuy</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Kids</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>clothing children</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>party-supplies</li>
-                <li class="dilog_search_li"><i class="fa-solid fa-magnifying-glass"></i>Fashion</li>
-            </ul>
-        </div>
-
-
-        <div *ngIf="contentsearchtwo">
-            <div class="content_search">
-                <input (input)="filterSearshProduct($event)" type='text' class='inp_search' />
-                <i class="fa-solid fa-magnifying-glass seacrch_icon"></i>
-            </div>
-            <h3 class="title_search_dilog">Recently searched</h3>
-
-            <div class="d-flex align-items-center justify-content-center flex-wrap contentent_search_two">
-                <div class="d-flex align-items-center" *ngFor="let item of filteredProducts">
-                    <img class="img_dilog_search" [src]='[item.image]' />
-                    <p class="desc_dilog_search"> <i class="fa-solid fa-fire-flame-curved"></i>{{item.category}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</p-dialog>
-
-
-
-
-
-
-<div *ngIf="ShowDropDown" class="d-flex content_liststs_product">
-    <ul class="">
-        <li (mouseover)="showProductHover('clothing Womens')" class=""><span>clothing Womens</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('Acceroies Mopile')" class=""><span>Acceroies Mopile</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('Beatuy')" class=""><span>Beatuy</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('Kids')" class=""><span>Kids</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('clothing children')" class=""><span>clothing children</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('party-supplies')" class=""><span>party-supplies</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-        <li (mouseover)="showProductHover('Fashion')" class=""><span>Fashion</span> <span><i
-                    class="fa-solid fa-angle-right"></i></span></li>
-    </ul>
-
-    <div style="overflow-y: auto;width: 100%;font-size: 20px;height: 50vh;padding: 20px;">
-        <div class="d-flex flex-wrap justify-content-center justify-content-around mt-3 ">
-            <div *ngFor="let item of ShowFilterArray" class="mt-5">
-                <img [src]='[item?.image]' />
-                <p>{{item?.category}}</p>
-            </div>
-        </div>
-
-
-
-        <div *ngIf="ShowFilterArray.length === 0"
-            class="d-flex flex-wrap justify-content-center justify-content-around mt-3 ">
-            <div *ngFor="let item of filteredProducts" class="mt-3">
-                <img [src]='[item?.image]' />
-                <p>{{item?.category}}</p>
-            </div>
-        </div>
-    </div>
-
-
-
 </div>
 
-<div class="flex justify-content-center">
-    <p-sidebar [(visible)]="sidebarVisibleTwo">
-        <div class=" ">
-            <div class="d-flex align-items-center p-3 text-white">
-                <div class=" d-flex align-items-center">
-                    <i class="fa-solid fa-icons sidebar_icon"></i>
-                    <p class="sidebar_desc">Best Sellers</p>
-                </div>
-            </div>
-
-            <div class="d-flex align-items-center p-3 text-white">
-                <i class="fa-regular fa-star sidebar_icon"></i>
-                <p class="sidebar_desc">5-Star Rated</p>
-            </div>
-
-            <div class="d-flex align-items-center p-3 text-white ">
-                <i class="fa-regular fa-thumbs-up sidebar_icon"></i>
-                <div class="mega_menu_dropdown mega_menu_demo_2 has_dropdown">
-                    <p class="sidebar_desc" (click)="ShowDilog()">Categores</p>
-                </div>
-
-            </div>
-            <div class="d-flex align-items-center p-3 text-white">
-                <i class="fa-solid fa-user sidebar_icon"></i>
-                <p class="sidebar_desc">SignIn/Register</p>
-            </div>
-
-            <ul class="sidebar_list_lang mt-4">
-                <li><button style="font-size:20px ;" (click)="ChangLanguage()">{{lang == 'en'? 'ar' :
-                        "en"}}<i class="fa-solid fa-globe" style="margin-left:10px; font-size:20px"></i></button></li>
-                <li><i style="font-size:20px ;" class="fa-solid fa-basket-shopping shopping"
-                        (click)="sidebarVisible2 = true"></i>
-                </li>
-            </ul>
-
-
-
-        </div>
-    </p-sidebar>
-</div>
+<app-product-header #dialog></app-product-header>
 
 
 
 
 
 
-<p-dialog header="Header" [(visible)]="visible2" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-    [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-    <p-accordion [activeIndex]="0">
-        <p-accordionTab header="Header I">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </p-accordionTab>
-        <p-accordionTab header="Header II">
-            <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-            </p>
-        </p-accordionTab>
-        <p-accordionTab header="Header III">
-            <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
-                qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-            </p>
-        </p-accordionTab>
-        <p-accordionTab header="Header IV" [disabled]="true" />  
-    </p-accordion>
-</p-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

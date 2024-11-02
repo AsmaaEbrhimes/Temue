@@ -1,41 +1,61 @@
-<app-header></app-header>
-<div class="detailas_product">
-    <div class="Container">
-        <div class="row mt-2 mb-5 ">
-            <div class="col-sm-12 col-md-6 col-xl-4 p-0">
-                <div class="row p-0">
-                    <div class="col-sm-12 col-md-12 col-xl-2">
-                        <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img1" class=" w-100 h-25 rounded"
-                            [src]="'assets/imges/' + objectDta.img1" alt="" />
-                        <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img2" class=" w-100 h-25 mt-2 rounded"
-                            [src]="'assets/imges/' + objectDta.img2" alt="" />
-                        <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img3" class=" w-100 h-25 mt-2 rounded"
-                            [src]="'assets/imges/' + objectDta.img3" alt="" />
-                        <video (mouseover)="sliderVideo($event)" class="w-100 h-25 mt-2 rounded"
-                            *ngIf="objectDta?.video" controls [src]="'assets/videos/' + objectDta.video" muted
-                            autoplay></video>
+<div class="row overflow-hidden">
+    <div class="side1">
+        <app-header></app-header>
+        <div class="detailas_product">
+            <div class="Container">
+                <div class="row mt-2 mb-5 ">
+                    <div class="col-sm-12 col-md-6 col-xl-4 p-0">
+                        <div class="p-0 d-flex ">
+
+                            <div class="d-flex flex-column align-items-center w-50">
+                                <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img1" class="w-100 h-50 rounded"
+                                    [src]="'assets/imges/' + objectDta.img1" alt="" />
+                                <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img2"
+                                    class=" w-100 h-50 mt-2 rounded" [src]="'assets/imges/' + objectDta.img2" alt="" />
+                                <img (mouseover)="sliderImg($event)" *ngIf="objectDta?.img3"
+                                    class=" w-100 h-50 mt-2 rounded" [src]="'assets/imges/' + objectDta.img3" alt="" />
+                                <video (mouseover)="sliderVideo($event)" class="w-100 h-50 mt-2 rounded"
+                                    *ngIf="objectDta?.video" controls [src]="'assets/videos/' + objectDta.video" muted
+                                    autoplay></video>
+
+                            </div>
+
+
+
+                            <div class="ms-1">
+                                <div class="d-flex align-items-center position-relative h-100">
+                                    <span (click)="AnglSlideOne()"><i class="fa-solid fa-angle-left fs-1 position-absolute bg-light"></i></span>
+                                    <img *ngIf="objectDta?.img1 && showImg" class="w-100 h-100 rounded" [src]="main_img"
+                                        alt="" />
+                                    <video (mouseover)="sliderVideo($event)" class="w-100 h-100 rounded"
+                                        *ngIf="objectDta?.video && showVideo" controls [src]="main_video" muted
+                                        autoplay></video>
+                                    <span (click)="AnglSlideTwo()"><i class="fa-solid fa-angle-right fs-1 position-absolute bg-light"></i></span>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
 
                     </div>
 
-                    <div class="col-sm-12 col-md-12 col-xl-10">
-                        <img *ngIf="objectDta?.img1 && showImg" class="w-100 h-100 rounded" [src]="main_img" alt="" />
-                        <video (mouseover)="sliderVideo($event)" class="w-100 h-100 rounded"
-                            *ngIf="objectDta?.video && showVideo" controls [src]="main_video" muted autoplay></video>
+                    <div class="col-sm-12 col-md-6 col-xl-7 mt-sm-3 mt-md-3 mt-xl-0 content_details_product">
+                        <app-details-righr-product [objectDta]="objectDta"></app-details-righr-product>
                     </div>
                 </div>
 
-            </div>
 
-            <div class="col-sm-12 col-md-6 col-xl-7 content_details_product">
-                <app-details-righr-product [objectDta]="objectDta"></app-details-righr-product>
             </div>
-            <!-- <div class="col-sm-0 col-md-1 col-xl-1 bg-light p-0 position-relative content_shopping_cart">
-                <app-sup-total></app-sup-total>
-            </div> -->
         </div>
+        <app-footer></app-footer>
+    </div>
 
 
+
+    <div class=" bg-light p-0 position-relative content_shopping_cart side2 overflow-hidden">
+        <app-sup-total></app-sup-total>
     </div>
 </div>
-
-<app-footer></app-footer>

@@ -1,10 +1,10 @@
 
  .content_shopping_cart {
     border-radius: 10px;
-    background-image: url('../../../../assets/imges/5ae4a0c1-285b-4149-80fa-890aff2ae8ca.webp');
+    background-image: url('../../../../assets/imges/5ae4a0c1-285b-4149-80fa-890aff2ae8ca.webp') !important;
     background-repeat: no-repeat;
     background-size: contain;
-
+    width: 0px !important;
 } 
 
 .content_shopping_cart div p {
@@ -49,4 +49,11 @@
     cursor: pointer;
   
     border-radius: 5px;
+}
+
+@media(min-width:1200px) and (max-width:1400px){
+    .content_shopping_cart{
+        display: none;
+        visibility: hidden;
+    }
 }
