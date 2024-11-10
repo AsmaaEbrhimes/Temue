@@ -49,3 +49,11 @@ input:focus{
     border: none;
     outline: none;
 }
+
+.category_product ul li{
+    background-color: #ccc;
+    border: 1px solid rgb(200, 194, 194);
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+

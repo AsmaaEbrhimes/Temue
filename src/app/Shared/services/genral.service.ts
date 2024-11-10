@@ -6,6 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GenralService {
    $ShowSuccess = new BehaviorSubject<boolean>(false);
+   $ShowSidebar = new BehaviorSubject<boolean>(false);
+   $mainProduct = new BehaviorSubject<[]>([]);
+   
   constructor() { }
 
 }

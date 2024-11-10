@@ -1,0 +1,47 @@
+
+<div class="d-flex">
+
+<div class="side_product">
+<app-header></app-header>
+<div class="Container">
+    <div class="category_product mt-4">
+        <ul class="d-flex justify-content-center flex-wrap">
+            <li class="ms-1 p-2 rounded-5 fw-bold "><span>{{'Home.clothingWomens' | translate}}</span> <span></span>
+            </li>
+            <li class="ms-1 p-2 rounded-5 fw-bold"><span>{{'Home.AcceroiesMopile' | translate}}</span> <span></span>
+            </li>
+            <li class="ms-1 p-2 rounded-5 fw-bold"><span>{{'Home.clothingchildren' | translate}}</span> <span></span>
+            </li>
+            <li class="ms-1 p-2 rounded-5 fw-bold"><span>{{'Home.party-supplies' | translate}}</span> <span></span></li>
+            <li [routerLink]="['/category/Fashion']" class="ms-3 p-2 rounded-5 fw-bold"><span>{{'Home.Fashion' |
+                    translate}}</span> <span></span></li>
+            <li class="ms-1 p-2 rounded-5 fw-bold"><span>{{'Home.Kids' | translate}}</span> <span></span></li>
+            <li class="ms-1 p-2 rounded-5 fw-bold"><span>{{'Home.Beauty' | translate}}</span> <span></span></li>
+        </ul>
+    </div>
+    <div class="product_header_fashion row  mb-3">
+        <div class="col-sm-6 col-md-6 col-xl-2 col_hover mt-2" *ngFor="let item of filterFashionCategory">
+            <img class="w-100" [src]="item?.image" />
+            <div class="d-flex justify-content-around">
+                <span>{{item?.description}}....</span>
+                <i class="fa-solid fa-bag-shopping   ps-3 pe-3 pt-1"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>
+</div>
+
+<div style="width: 10%">
+</div>
+</div>

@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { GenralService } from '../../../Shared/services/genral.service';
 import { HomeService } from '../home.service';
-import { SupTotalComponent } from '../sup-total/sup-total.component';
 
 @Component({
   selector: 'app-dilog-product-home',
@@ -9,7 +8,6 @@ import { SupTotalComponent } from '../sup-total/sup-total.component';
   styleUrl: './dilog-product-home.component.css'
 })
 export class DilogProductHomeComponent {
-  @ViewChild(SupTotalComponent) supTotalComponent!: SupTotalComponent;
   constructor(private services: HomeService , private gs:GenralService) { 
     this.dataHome = this.services.AllDataHome()
 
@@ -33,9 +31,6 @@ this.GetResponseSuccesFromGenralServices()
     })
   }
 
-  ngAfterViewInit() {
-    console.log("SupTotalComponent:",this.supTotalComponent.cartData);
-  }
 
 
 
@@ -75,11 +70,7 @@ this.GetResponseSuccesFromGenralServices()
   }
 
 
-  updateCartData() {
-    this.supTotalComponent.cartData= JSON.parse(localStorage.getItem('cartmainProduct') || '[]');
-  }
-
-
+ 
 
   AddProduct(id: any) {
     if (this.findProduct && typeof this.findProduct === 'object') {
@@ -88,7 +79,7 @@ this.GetResponseSuccesFromGenralServices()
       if (!exists) {
         existingCart.push(this.findProduct);
         localStorage.setItem('cartmainProduct', JSON.stringify(existingCart));
-       this. updateCartData()      
+        this.gs.$mainProduct.next(existingCart)
           this.gs.$ShowSuccess.next(true)
         setTimeout(() => {
           this.gs.$ShowSuccess.next(false)

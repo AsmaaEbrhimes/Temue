@@ -82,9 +82,15 @@
     width: 10%;
 }
 
+.Hide{
+    width: 0;
+    overflow: hidden;
+}
 
+.Show{
+    width: 100%;
 
-
+}
 
 
 

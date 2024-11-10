@@ -1,4 +1,4 @@
-<div class="p-1">
+<div class="p-1 sidebar">
     <div class="d-flex justify-content-center align-items-center w-100 mt-3 ">
         <p>{{'Home.supTotal' | translate}}</p>
         <p><i class="fa-solid fa-bag-shopping ps-1"></i></p>
@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="mt-4 text-center sup_total_button p-2">
-        <button
-            class="w-100 mb-2  border-0 rounded-pill text-light p-2">{{'Home.check' | translate}}<span>(9)</span></button>
+        <button class="w-100 mb-2  border-0 rounded-pill text-light p-2">{{'Home.check' |
+            translate}}<span>(9)</span></button>
         <button class="w-100 border-0 rounded-pill text-light p-2">{{'Home.GoCart' | translate}}</button>
     </div>
 
@@ -21,43 +21,21 @@
         <p class=""><input class="inp_radio_shopping" type="radio" /></p>
         <p class="ps-2">{{'Home.Selectall' | translate}}<span>(9)</span> </p>
     </div>
+    <div class="overflow-auto scroll__auto">
+        <div class="shoping_sup_procduc_choocer " *ngFor="let item of cartData">
+            <div class="text-center mb-3">
+                <img class="w-100 mt-2" [src]="'assets/imges/' + item.img1" />
+                <p class="mt-3 fw-bold">£{{item.salary}}</p>
+                <select class="w-100 mt-2 p-1  border border-secondary-subtle">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
 
-    <div class="shoping_sup_procduc_choocer ">
-        <div class="text-center mb-3">
-            <img class="w-100 mt-2 " src="assets/imges/02ab0499-be2c-4275-aecf-0ce7681a2341.jpg" />
-            <p class="mt-3 fw-bold">£1.41</p>
-            <select class="w-100 mt-2 p-1  border border-secondary-subtle">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
         </div>
 
-        <div class="text-center mb-3">
-            <img class="w-100 mt-2 " src="assets/imges/02ab0499-be2c-4275-aecf-0ce7681a2341.jpg" />
-            <p class="mt-3 fw-bold">£1.41</p>
-            <select class="w-100 mt-2 p-1  border border-secondary-subtle">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
-
-        <div class="text-center mb-3">
-            <img class="w-100 mt-2 " src="assets/imges/02ab0499-be2c-4275-aecf-0ce7681a2341.jpg" />
-            <p class="mt-3 fw-bold">£1.41</p>
-            <select class="w-100 mt-2 p-1  border border-secondary-subtle">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
     </div>
 
 </div>
-
-
-

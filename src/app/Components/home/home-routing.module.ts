@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'detailsproducr/:id', component: DtailsProductComponent },
   { path: 'suptotal', component: SupTotalComponent },
 
-
 ];
 
 @NgModule({

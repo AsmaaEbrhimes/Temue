@@ -1,4 +1,8 @@
 
+ .sidebar{
+     border-left: 1px solid rgb(151 151 151)
+ }
+ 
  .content_shopping_cart {
     border-radius: 10px;
     background-image: url('../../../../assets/imges/5ae4a0c1-285b-4149-80fa-890aff2ae8ca.webp') !important;
@@ -42,12 +46,12 @@
     transform: scale(1.5);
     cursor: pointer;    
 }
-
-
+.scroll__auto{
+    height: 400px;
+}
 
 .shoping_sup_procduc_choocer select{
     cursor: pointer;
-  
     border-radius: 5px;
 }
 

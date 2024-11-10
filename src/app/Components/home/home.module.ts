@@ -39,6 +39,9 @@ import { HeaderHomeComponent } from './header-home/header-home.component';
     RadioButtonModule,
     TranslatingModule,
 
+  ],
+  exports:[
+    SupTotalComponent,
   ]
 })
 export class HomeModule { }
